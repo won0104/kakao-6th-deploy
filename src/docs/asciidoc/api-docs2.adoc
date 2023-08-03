@@ -34,7 +34,7 @@ include::{snippets}/{product}/find-by-id_test/http-request.adoc[]
 ==== 응답 예시
 include::{snippets}/{product}/find-by-id_test/response-body.adoc[]
 
-=== [기능 2 - 실패 1] 요청하는 상품 id 값이 존재하지 않을 경우
+=== [기능 2 실패 케이스 1] 요청하는 상품 id 값이 존재하지 않을 경우
 
 ==== 요청 예시
 include::{snippets}/{product}/find-by-id_404test/http-request.adoc[]
@@ -45,7 +45,7 @@ include::{snippets}/{product}/find-by-id_404test/response-body.adoc[]
 
 == 유저 User
 
-=== [기능3] 이메일 중복 여부 확인
+=== [기능3] 이메일 중복
 
 ==== 요청 예시
 include::{snippets}/{user}/unique-email_test/http-request.adoc[]
@@ -53,18 +53,16 @@ include::{snippets}/{user}/unique-email_test/http-request.adoc[]
 ==== 응답 예시
 include::{snippets}/{user}/unique-email_test/response-body.adoc[]
 
-=== [기능 3 - 실패 1] 동일한 이메일이 존재하는 경우
-* 요청 받은 이메일이 이미 가입 되어 있을 경우
-
+=== [기능 3 실패 케이스 1] 동일한 이메일이 존재하는 경우
+*요청 받은 이메일이 이미 가입 되어 있을 경우
 ==== 요청 예시
 include::{snippets}/{user}/unique-email_duplication_test/http-request.adoc[]
 
 ==== 응답 예시
 include::{snippets}/{user}/unique-email_duplication_test/response-body.adoc[]
 
-=== [기능 3 - 실패 2] 이메일 형식이 잘못된 경우
-* 이메일 형식이 잘못 되었습니다.
-
+=== [기능 3 실패 케이스 2] 이메일 형식이 잘못된 경우
+*이메일 형식이 잘못 되었습니다.
 ==== 요청 예시
 include::{snippets}/{user}/unique-email_-error_test/http-request.adoc[]
 
@@ -81,9 +79,8 @@ include::{snippets}/{user}/join_test/http-request.adoc[]
 ==== 응답 예시
 include::{snippets}/{user}/join_test/response-body.adoc[]
 
-=== [기능 4 - 실패 1] 동일한 이메일이 존재하는 경우
-* 요청 받은 이메일이 이미 가입 되어 있을 경우
-
+=== [기능 4 실패 케이스 1] 동일한 이메일이 존재하는 경우
+*요청 받은 이메일이 이미 가입 되어 있을 경우
 ==== 요청 예시
 include::{snippets}/{user}/join_duplication_test/http-request.adoc[]
 
@@ -91,7 +88,7 @@ include::{snippets}/{user}/join_duplication_test/http-request.adoc[]
 include::{snippets}/{user}/join_duplication_test/response-body.adoc[]
 
 === [기능 4 실패 케이스 2] 이메일 형식이 잘못된 경우
-*이메일 형식이 잘못 되었습니다. 
+*이메일 형식이 잘못 되었습니다.
 ==== 요청 예시
 include::{snippets}/{user}/join_email-error_test/http-request.adoc[]
 
@@ -99,23 +96,22 @@ include::{snippets}/{user}/join_email-error_test/http-request.adoc[]
 include::{snippets}/{user}/join_email-error_test/response-body.adoc[]
 
 
-=== [기능 4 - 실패 3] pw 형식이 잘못된 경우
-* 영문 숫자 특수문자 포함하며, 공백 X
-
+=== [기능 4 실패 케이스 3] pw 형식이 잘못된 경우
+*영문 숫자 특수문자 포함하며, 공백 X
 ==== 요청 예시
 include::{snippets}/{user}/join_pw-error_test/http-request.adoc[]
 
 ==== 응답 예시
 include::{snippets}/{user}/join_pw-error_test/response-body.adoc[]
 
-=== [기능 4 - 실패 4] UserName 형식이 잘못된 경우
+=== [기능 4 실패 케이스 4] UserName 형식이 잘못된 경우
 * UserName의 길이는 8~20자 이내여야 한다.
-
 ==== 요청 예시
 include::{snippets}/{user}/join_user-name-error_test/http-request.adoc[]
 
 ==== 응답 예시
 include::{snippets}/{user}/join_user-name-error_test/response-body.adoc[]
+
 
 
 === [기능5] 로그인
@@ -126,9 +122,8 @@ include::{snippets}/{user}/login_test/http-request.adoc[]
 ==== 응답 예시
 include::{snippets}/{user}/login_test/response-body.adoc[]
 
-=== [기능 5 - 실패 1] 이메일 형식이 잘못된 경우
-* 이메일 형식이 잘못 되었습니다.
-
+=== [기능 5 실패 케이스 1] 이메일 형식이 잘못된 경우
+*이메일 형식이 잘못 되었습니다.
 ==== 요청 예시
 include::{snippets}/{user}/login_email-error_test/http-request.adoc[]
 
@@ -136,27 +131,24 @@ include::{snippets}/{user}/login_email-error_test/http-request.adoc[]
 include::{snippets}/{user}/login_email-error_test/response-body.adoc[]
 
 
-=== [기능 5 - 실패 2] pw 형식이 잘못된 경우
-* 영문 숫자 특수문자 포함하며, 공백 X
-
+=== [기능 5 실패 케이스 2] pw 형식이 잘못된 경우
+*영문 숫자 특수문자 포함하며, 공백 X
 ==== 요청 예시
 include::{snippets}/{user}/login_pw-error1_test/http-request.adoc[]
 
 ==== 응답 예시
 include::{snippets}/{user}/login_pw-error1_test/response-body.adoc[]
 
-=== [기능 5 - 실패 3] 로그인 실패
+=== [기능 5 실패 케이스 3] 로그인 실패
 * 로그인 실패
-
 ==== 요청 예시
 include::{snippets}/{user}/login_pw-error2_test/http-request.adoc[]
 
 ==== 응답 예시
 include::{snippets}/{user}/login_pw-error2_test/response-body.adoc[]
 
-=== [기능 5 - 실패 4] pw 형식이 잘못된 경우 (길이)
-* pw 길이는 8~20자 이내여야 한다.
-
+=== [기능 5 실패 케이스 4] pw 형식이 잘못된 경우 (길이)
+*pw 길이는 8~20자 이내여야 한다.
 ==== 요청 예시
 include::{snippets}/{user}/login_pw-error3_test/http-request.adoc[]
 
@@ -166,7 +158,7 @@ include::{snippets}/{user}/login_pw-error3_test/response-body.adoc[]
 
 == 장바구니 Cart
 
-=== [기능6]  장바구니 담기
+=== [기능6] 장바구니 담기
 
 ==== 요청 예시
 include::{snippets}/{cart}/add-cart-list_test/http-request.adoc[]
@@ -175,9 +167,8 @@ include::{snippets}/{cart}/add-cart-list_test/http-request.adoc[]
 include::{snippets}/{cart}/add-cart-list_test/response-body.adoc[]
 
 
-=== [기능 6 - 실패 1] 동일한 요청 2번
+=== [기능 6 실패 케이스 1] 동일한 요청 2번
 * 동일한 상품 id의 요청이 2번 이상 들어올 경우
-
 ==== 요청 예시
 include::{snippets}/{cart}/add-cart-list_double-id_test/http-request.adoc[]
 
@@ -185,95 +176,10 @@ include::{snippets}/{cart}/add-cart-list_double-id_test/http-request.adoc[]
 include::{snippets}/{cart}/add-cart-list_double-id_test/response-body.adoc[]
 
 
-=== [기능 6 - 실패 2] 요청한 옵션 ID값 없음
-* 요청한 옵션 ID값이 존재하지 않을때
-
+=== [기능 6 실패 케이스 2] 요청한 옵션 ID값 없음
+* 동요청한 옵션 ID값이 존재하지 않을때
 ==== 요청 예시
 include::{snippets}/{cart}/add-cart-list_no-id_test/http-request.adoc[]
 
 ==== 응답 예시
 include::{snippets}/{cart}/add-cart-list_no-id_test/response-body.adoc[]
-
-=== [기능 7] 장바구니 조회
-
-==== 요청 예시
-include::{snippets}/{cart}/find-all_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{cart}/find-all_test/response-body.adoc[]
-
-=== [기능 7 - 실패 1] 장바구니가 비었을때
-
-==== 요청 예시
-include::{snippets}/{cart}/find-all_empty-cart_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{cart}/find-all_empty-cart_test/response-body.adoc[]
-
-=== 장바구니 수정
-* 주문하기를 할 때 장바구니 데이터를 update하고 그 결과를 응답받는다.
-* 결재페이지에서 이 응답을 사용해도 되고, 다시 장바구니 조회 API를 사용해도 된다.
-
-==== 요청 예시
-include::{snippets}/{cart}/update_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{cart}/update_test/response-body.adoc[]
-
-=== [기능 8 - 실패 1] 장바구니가 비었을때
-
-==== 요청 예시
-include::{snippets}/{cart}/update_empty-cart_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{cart}/update_empty-cart_test/response-body.adoc[]
-
-=== [기능 8 - 실패 2] 동일한 장바구니 id 값이 두번 이상 들어왔을 경우
-
-==== 요청 예시
-include::{snippets}/{cart}/update_double-id_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{cart}/update_double-id_test/response-body.adoc[]
-
-=== [기능 8 - 실패 3] 요청한 장바구니 ID값이 존재하지 않을 때
-
-==== 요청 예시
-include::{snippets}/{cart}/update_no-id_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{cart}/update_no-id_test/response-body.adoc[]
-
-== 주문하기 Order
-
-=== [기능9] 주문하기
-* 주문하기를 할 때 장바구니 데이터를 update하고 그 결과를 응답받는다.
-
-==== 요청 예시
-include::{snippets}/{order}/save-order_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{order}/save-order_test/response-body.adoc[]
-
-=== [기능 9 - 실패 1] 장바구니가 비었을때
-==== 요청 예시
-include::{snippets}/{order}/save-order_empty-cart_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{order}/save-order_empty-cart_test/response-body.adoc[]
-
-=== [기능10] 주문 결과 확인하기
-* 주문하기를 할 때 장바구니 데이터를 update하고 그 결과를 응답받는다.
-
-==== 요청 예시
-include::{snippets}/{order}/find-by-id_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{order}/find-by-id_test/response-body.adoc[]
-
-=== [기능 9 - 실패 1] 장바구니가 비었을때
-==== 요청 예시
-include::{snippets}/{order}/find-by-id_no-id_test/http-request.adoc[]
-
-==== 응답 예시
-include::{snippets}/{order}/find-by-id_no-id_test/response-body.adoc[]
