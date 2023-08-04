@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Sql(value = "classpath:db/teardown.sql")
 @AutoConfigureMockMvc
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
-public class CartRestControllerTest extends MyRestDoc {
+public class  CartRestControllerTest extends MyRestDoc {
     @Autowired
     private ObjectMapper om;
 

@@ -9,12 +9,12 @@ import java.util.Optional;
 
 
 public interface CartJPARepository extends JpaRepository<Cart, Integer> {
-    List<Cart> findAllByUserId(int userId);
+    List<Cart> findAllByUserId(@Param("userId")int userId);
 
     @Query("select c from Cart c join fetch c.option o  join fetch o.product p where c.user.id = :userId order by c.option.id asc")
-    List<Cart> findByUserIdOrderByOptionIdAsc(int userId);
+    List<Cart> findByUserIdOrderByOptionIdAsc(@Param("userId")int userId);
 
-    void deleteByUserId(int userId);
+    void deleteByUserId(@Param("userId")int userId);
 
     @Query("select c from Cart c where c.option.id = :optionId and c.user.id = :userId")
     Optional<Cart> findByOptionIdAndUserId(@Param("optionId") int optionId, @Param("userId") int userId);
